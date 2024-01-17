@@ -24,3 +24,25 @@ export function useLogin() {
   return { mutate, isLoading }
 }
 
+export function useRegister() {
+  const navigate = useNavigate()
+  const { mutate, isLoading } = useMutation(client.users.register, {
+    onSuccess(data, variables, context) {
+      notification.open({
+        message: 'Success!',
+        description: 'Your account is registered',
+        icon: <SmileTwoTone style={{ color: 'red' }} />,
+      })
+      navigate('/')
+    },
+    onError: (error: Error) => {
+      notification.open({
+        message: 'Error!',
+        description: error.response.data.message,
+        icon: <CloseCircleOutlined style={{ color: 'red' }} />,
+      })
+    },
+  })
+  return { mutate, isLoading }
+}
+
