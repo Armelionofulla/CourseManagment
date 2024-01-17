@@ -1,0 +1,9 @@
+.course {
+  display: flex;
+  flex-direction: row;
+  margin-left: -40rem;
+}
+
+.details {
+  margin-left: 3rem;
+}
