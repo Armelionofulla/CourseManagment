@@ -1,4 +1,4 @@
-import {Login,Dashboard, Register, CourseDetails, Profile, MyCourses , Friends,} from '../pages'
+import {Login,Dashboard, Register, CourseDetails, Profile, MyCourses , Friends, Student} from '../pages'
 
 export const paths = Object.freeze({
   DASHBOARD: '/courses',
@@ -8,6 +8,7 @@ export const paths = Object.freeze({
   DETAILS: '/courses/:id',
   MYCOURSES: '/mycourses',
   FRIENDS: '/friends',
+  STUDENTS: '/students/:id',
 })
 
 const routeNames = Object.freeze({
@@ -20,6 +21,7 @@ const routeNames = Object.freeze({
   DETAILS: 'Details',
   MYCOURSES: 'My_courses',
   FRIENDS: 'Friends',
+  STUDENTS: 'Students',
 })
 
 export const routes = [
@@ -65,5 +67,11 @@ export const routes = [
     path: paths.FRIENDS,
     protected: true,
     element: <Friends />,
+  },
+  {
+    name: routeNames.STUDENTS,
+    path: paths.STUDENTS,
+    protected: true,
+    element: <Student />,
   },
 ]

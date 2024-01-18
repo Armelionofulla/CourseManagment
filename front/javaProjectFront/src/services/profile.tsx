@@ -46,3 +46,35 @@ export function useRegister() {
   return { mutate, isLoading }
 }
 
+export function useProfile(username: string) {
+  const { data, isLoading } = useQuery<ViewProfile, Error>([API_ENDPOINTS.PROFILE], () => client.users.profile(username))
+  return { data, isLoading }
+}
+
+export function useEditProfile() {
+  const queryClient = useQueryClient()
+
+  const navigate = useNavigate()
+  const { mutate, isLoading } = useMutation(client.users.editProfile, {
+    onSuccess(data, variables, context) {
+      localStorage.setItem('auth', localStorage.getItem('authToBe'))
+      notification.open({
+        message: 'Success!',
+        description: 'Your account is edited',
+        icon: <SmileTwoTone style={{ color: 'red' }} />,
+      })
+      //navigate('/courses')
+    },
+    onError: (error: Error) => {
+      notification.open({
+        message: 'Error!',
+        description: error.response.data.message,
+        icon: <CloseCircleOutlined style={{ color: 'red' }} />,
+      })
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries()
+    },
+  })
+  return { mutate, isLoading }
+}

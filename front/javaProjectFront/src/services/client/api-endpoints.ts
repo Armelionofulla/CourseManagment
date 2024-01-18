@@ -8,5 +8,6 @@ export const API_ENDPOINTS = {
   MYCOURSES: '/coursesByStudent',
   MYFRIENDS: '/getMyConnections',
   CONNECTIONS: '/add-connections',
+  STUDENTS: '/students',
   PENDING: '/getMyPending',
 }

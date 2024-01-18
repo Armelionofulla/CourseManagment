@@ -40,11 +40,11 @@ export interface JoinCourse {
   courseId: number
 }
 
-export interface Comments {
-  id: number
-  text: string
-  likes: string
-  username: string
-  studentId: number
-  courseId: number
-}
+// export interface Comments {
+//   id: number
+//   text: string
+//   likes: string
+//   username: string
+//   studentId: number
+//   courseId: number
+// }

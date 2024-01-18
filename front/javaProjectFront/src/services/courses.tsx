@@ -6,7 +6,7 @@ import { CloseCircleOutlined } from '@ant-design/icons'
 import { Error, ViewProfile } from '../types/user'
 import { API_ENDPOINTS } from './client/api-endpoints'
 import { Course, Courses, CourseRespone,} from '../types/courses'
-
+import { Friend } from '../types/friend'
 
 export function useFindCourses() {
   const { data, isLoading } = useQuery<Courses, Error>([API_ENDPOINTS.COURSES], () => client.courses.findAll())
