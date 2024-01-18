@@ -1,9 +1,10 @@
-import {Login,Dashboard, Register, CourseDetails, MyCourses ,} from '../pages'
+import {Login,Dashboard, Register, CourseDetails, Profile, MyCourses ,} from '../pages'
 
 export const paths = Object.freeze({
   DASHBOARD: '/courses',
   LOGIN: '/',
   REGISTER: '/register',
+  PROFILE: '/profile',
   DETAILS: '/courses/:id',
   MYCOURSES: '/mycourses',
   })
@@ -12,6 +13,9 @@ const routeNames = Object.freeze({
   DASHBOARD: 'Dashboard',
   LOGIN: 'Login',
   REGISTER: 'Register',
+  PROFILE: 'Profile',
+  CERTIFICATE: 'Certoficate',
+  PASSWORD_RECOVERY: 'Password recovery',
   DETAILS: 'Details',
   MYCOURSES: 'My_courses',
   })
@@ -43,9 +47,15 @@ export const routes = [
     element: <CourseDetails />,
   },
   {
+    name: routeNames.PROFILE,
+    path: paths.PROFILE,
+    protected: true,
+    element: <Profile />,
+  },
+  {
     name: routeNames.MYCOURSES,
     path: paths.MYCOURSES,
     protected: true,
     element: <MyCourses />,
   },
-  ]
+]
