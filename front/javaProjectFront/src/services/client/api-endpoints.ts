@@ -2,6 +2,7 @@ export const API_ENDPOINTS = {
   LOGIN: '/login',
   REGISTER: '/register',
   PROFILE: '/getStudent',
+  EDIT_PROFILE: '/updateStudent',
   COURSES: '/courses',
   JOINCOURSE: '/course-student',
   DROPCOURSE: '/course-remove',
@@ -10,4 +11,6 @@ export const API_ENDPOINTS = {
   CONNECTIONS: '/add-connections',
   STUDENTS: '/students',
   PENDING: '/getMyPending',
+  COMMENTS: '/comments',
 }
+

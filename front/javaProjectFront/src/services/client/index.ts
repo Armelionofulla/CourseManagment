@@ -1,8 +1,8 @@
 import { AuthResponse, ViewProfile, LoginUserInput, RegisterUserInput } from '../../types/user'
-import { Courses, JoinCourse, CourseRespone, Course} from '../../types/courses'
+import { Courses, JoinCourse, CourseRespone, Course, Comments } from '../../types/courses'
 import { API_ENDPOINTS } from './api-endpoints'
 import { HttpClient } from './http-client'
-import { HttpClient } from './http-client'
+import { getAuth } from '../../utils'
 import { Response } from '../../types/general'
 import { Friend } from '../../types/friend'
 
@@ -37,6 +37,9 @@ class Client {
     getFriendCourse: (id: Number) => HttpClient.post<Course[]>(`${API_ENDPOINTS.MYCOURSES}/${id}`, {}, { headers: getAuth() }),
   }
 
+  comments = {
+    addComment: (input: Comments) => HttpClient.post<Comments>(`${API_ENDPOINTS.COMMENTS}/${input.courseId}`, input, { headers: getAuth() }),
+  }
 }
 
 export default new Client()

@@ -39,6 +39,6 @@ export interface Response {
   code: string
 }
 
-// export interface Comments {
-//   text: string
-// }
+export interface Comments {
+  text: string
+}

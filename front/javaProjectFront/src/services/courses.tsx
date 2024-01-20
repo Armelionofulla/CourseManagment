@@ -5,7 +5,7 @@ import { notification } from 'antd'
 import { CloseCircleOutlined } from '@ant-design/icons'
 import { Error, ViewProfile } from '../types/user'
 import { API_ENDPOINTS } from './client/api-endpoints'
-import { Course, Courses, CourseRespone,} from '../types/courses'
+import { Course, Courses, CourseRespone, Comments } from '../types/courses'
 import { Friend } from '../types/friend'
 
 export function useFindCourses() {
@@ -60,3 +60,7 @@ export function useStudent(id: number) {
   return { data, isLoading }
 }
 
+export function useComments(id: number) {
+  const { data, isLoading } = useQuery<Comments[]>([API_ENDPOINTS.COMMENTS], () => client.courses.getCommentsByCourseId(id))
+  return { data, isLoading }
+}

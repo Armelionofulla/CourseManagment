@@ -58,28 +58,3 @@ export const Friends = () => {
     </PrivateLayout>
   )
 }
-
-{
-  /* <div className={styles.course}>
-            <Card hoverable style={{ width: 240 }} cover={<img alt="example" src={(process.env.REACT_APP_API_URL as string) + image} />}>
-              <Meta title={data?.[0]?.courseName} />
-            </Card>
-            <div className={styles.details}>
-              <Title level={5}> Type: {data?.[0]?.type}</Title>
-              <Title level={5}> Start date: {data?.[0]?.startDate}</Title>
-              <Title level={5}> End date: {data?.[0]?.endDate}</Title>
-              <Title level={5}> Course Time: {data?.[0]?.courseTime}</Title>
-              <Title level={5}>Lecture Hall: {data?.[0]?.lectureHall}</Title>
-
-              {!isRegistered ? (
-                <Button style={{ display: 'grid', gap: '3rem', alignItems: 'center' }} onClick={() => joinCourseHandler(data?.[0]?.id as number)}>
-                  Join Course
-                </Button>
-              ) : (
-                <Button style={{ display: 'grid', gap: '3rem', alignItems: 'center' }} onClick={() => deleteCourseHandler(data?.[0]?.id as number)}>
-                  Drop Course
-                </Button>
-              )}
-            </div>
-          </div> */
-}
